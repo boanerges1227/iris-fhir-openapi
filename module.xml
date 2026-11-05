@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="IRIS" version="26">
+  <Document name="iris-fhir-openapi.ZPM">
+    <Module>
+      <Name>iris-fhir-openapi</Name>
+      <Version>0.1.0</Version>
+      <Packaging>module</Packaging>
+      <SourcesRoot>src</SourcesRoot>
+      <Description>Native FHIR R4 CapabilityStatement to OpenAPI 3.0.3 gateway specification generator</Description>
+      <Resource Name="FHIR.OpenAPI.Access.CLS"/>
+      <Resource Name="FHIR.OpenAPI.CLI.CLS"/>
+      <Resource Name="FHIR.OpenAPI.Capability.Parser.CLS"/>
+      <Resource Name="FHIR.OpenAPI.Config.CLS"/>
+      <Resource Name="FHIR.OpenAPI.Deadline.CLS"/>
+      <Resource Name="FHIR.OpenAPI.Generator.CLS"/>
+      <Resource Name="FHIR.OpenAPI.Install.CLS"/>
+      <Resource Name="FHIR.OpenAPI.JSON.CLS"/>
+      <Resource Name="FHIR.OpenAPI.Mapping.Interactions.CLS"/>
+      <Resource Name="FHIR.OpenAPI.Mapping.Responses.CLS"/>
+      <Resource Name="FHIR.OpenAPI.Mapping.Search.CLS"/>
+      <Resource Name="FHIR.OpenAPI.Mapping.Security.CLS"/>
+      <Resource Name="FHIR.OpenAPI.Options.CLS"/>
+      <Resource Name="FHIR.OpenAPI.REST.CLS"/>
+      <Resource Name="FHIR.OpenAPI.Report.CLS"/>
+      <Resource Name="FHIR.OpenAPI.Schema.Gateway.CLS"/>
+      <Resource Name="FHIR.OpenAPI.Service.CLS"/>
+      <Resource Name="FHIR.OpenAPI.Source.Base.CLS"/>
+      <Resource Name="FHIR.OpenAPI.Source.BoundedStream.CLS"/>
+      <Resource Name="FHIR.OpenAPI.Source.File.CLS"/>
+      <Resource Name="FHIR.OpenAPI.Source.HTTP.CLS"/>
+      <Resource Name="FHIR.OpenAPI.Source.Local.CLS"/>
+      <Resource Name="FHIR.OpenAPI.Source.Request.CLS"/>
+      <Resource Name="FHIR.OpenAPI.Validator.CLS"/>
+      <Invoke Class="FHIR.OpenAPI.Install" Method="Preflight" Phase="Compile" When="After" CheckStatus="true">
+        <Arg>${namespace}</Arg><Arg>/fhir-openapi-${namespaceLower}</Arg><Arg>${cspdir}fhir-openapi-${namespaceLower}</Arg>
+      </Invoke>
+      <FileCopy Name="web/index.html" Target="${cspdir}fhir-openapi-${namespaceLower}/index.html"/>
+      <FileCopy Name="web/app.js" Target="${cspdir}fhir-openapi-${namespaceLower}/app.js"/>
+      <FileCopy Name="web/style.css" Target="${cspdir}fhir-openapi-${namespaceLower}/style.css"/>
+      <FileCopy Name="web/login/index.html" Target="${cspdir}fhir-openapi-${namespaceLower}/login/index.html"/>
+      <FileCopy Name="web/login/login.js" Target="${cspdir}fhir-openapi-${namespaceLower}/login/login.js"/>
+      <FileCopy Name="web/login/login.css" Target="${cspdir}fhir-openapi-${namespaceLower}/login/login.css"/>
+      <Invoke Class="FHIR.OpenAPI.Install" Method="Setup" Phase="Activate" When="After" CheckStatus="true">
+        <Arg>${namespace}</Arg><Arg>/fhir-openapi-${namespaceLower}</Arg><Arg>${cspdir}fhir-openapi-${namespaceLower}</Arg><Arg>1</Arg>
+      </Invoke>
+      <Invoke Class="FHIR.OpenAPI.Install" Method="Uninstall" Phase="Clean" When="Before" CheckStatus="true"/>
+    </Module>
+  </Document>
+</Export>

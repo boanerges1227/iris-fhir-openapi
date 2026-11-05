@@ -1,0 +1,13 @@
+services:
+  iris:
+    build: .
+    container_name: iris-fhir-openapi-test
+    ports:
+      - "127.0.0.1:53985:52773"
+    volumes:
+      - ./src:/workspace/src:ro
+      - ./tests:/workspace/tests:ro
+      - ./scripts:/workspace/scripts:ro
+      - ./examples:/workspace/examples:ro
+      - ./.local:/workspace/.local
+    command: ["--check-caps", "false"]

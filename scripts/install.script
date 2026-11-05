@@ -1,0 +1,12 @@
+set sc=$SYSTEM.OBJ.LoadDir("/opt/fhir-openapi/src","ck",,1)
+if $SYSTEM.Status.IsError(sc) do $SYSTEM.Status.DisplayError(sc) halt
+set sc=##class(FHIR.OpenAPI.Install).Setup("USER","/fhir-openapi-user","/opt/fhir-openapi/web")
+if $SYSTEM.Status.IsError(sc) do $SYSTEM.Status.DisplayError(sc) halt
+// This script is used only by the local development image, never by IPM installation.
+set $Namespace="%SYS"
+kill p
+set p("Password")="SYS"
+set sc=##class(Security.Users).Modify("_SYSTEM",.p)
+if $SYSTEM.Status.IsError(sc) do $SYSTEM.Status.DisplayError(sc) halt
+write "FHIR_OPENAPI_INSTALL_OK",!
+halt

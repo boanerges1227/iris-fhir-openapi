@@ -1,0 +1,18 @@
+.DS_Store
+.local/
+__pycache__/
+.venv/
+node_modules/
+
+.playwright-cli/
+.playwright/
+dist/
+
+# Local design and daily work records
+/docs/
+
+# Local daily work log
+/WORKLOG.md
+
+# Local agent instructions are not published
+/AGENTS.md

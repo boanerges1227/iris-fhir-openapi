@@ -1,0 +1,2 @@
+# Dev-only validation usage; IPM module has no Python runtime dependencies.
+openapi-spec-validator==0.7.2

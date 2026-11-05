@@ -1,0 +1,49 @@
+{
+  "source": {
+    "kind": "file",
+    "capability": {
+      "resourceType": "CapabilityStatement",
+      "status": "active",
+      "kind": "instance",
+      "fhirVersion": "4.0.1",
+      "format": [
+        "json"
+      ],
+      "implementation": {
+        "url": "http://internal.invalid/fhir"
+      },
+      "rest": [
+        {
+          "mode": "server",
+          "resource": [
+            {
+              "type": "Patient",
+              "interaction": [
+                {
+                  "code": "read"
+                },
+                {
+                  "code": "search-type"
+                }
+              ],
+              "searchParam": [
+                {
+                  "name": "birthdate",
+                  "type": "date"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "publicBaseUrl": "https://api.example.org/fhir/r4",
+  "info": {
+    "title": "FHIR API",
+    "version": "1.0.0"
+  },
+  "security": {
+    "mode": "bearer"
+  }
+}
