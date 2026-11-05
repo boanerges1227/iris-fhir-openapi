@@ -183,3 +183,7 @@ set sc=##class(FHIR.OpenAPI.Install).Uninstall()
 ```
 
 只删除模块拥有的入口、静态资源和代码。角色/权限资源与来源登记保留，供管理员确认没有引用后清理。不会删除 FHIR 服务、数据库、命名空间或客户 SSL 配置。
+
+## 许可证
+
+本项目采用 [MIT 许可证](LICENSE)。

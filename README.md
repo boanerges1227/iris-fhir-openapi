@@ -197,3 +197,7 @@ if $SYSTEM.Status.IsError(sc) do $SYSTEM.Status.DisplayError(sc)
 ```
 
 The module removes its owned entry points and managed static assets. Manual source files are not deleted. Security roles/resources and source registrations are retained for an administrator to review before cleanup; existing FHIR services, databases, namespaces and customer SSL configurations are not deleted.
+
+## License
+
+This project is distributed under the [MIT License](LICENSE).
