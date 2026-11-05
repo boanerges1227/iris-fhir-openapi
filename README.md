@@ -6,7 +6,7 @@ Generate an OpenAPI 3.0.3 JSON document from a FHIR R4 CapabilityStatement insid
 
 The native ObjectScript module provides an English management UI, REST API, and terminal entry point. It can read a local FHIR endpoint, an explicitly registered HTTP(S) source, or an uploaded CapabilityStatement JSON file. The runtime does not depend on Python, Node.js, an external web service, or AI.
 
-**Development version: 0.1.0.** The project is not yet published to a public IPM registry. A previously generated local `dist` archive is not included in the repository and predates the later English UI changes. Use the current source for those changes.
+**Current version: 0.1.0.** The package is available from the public IPM registry. A previously generated local `dist` archive is not included in the repository and predates the later English UI changes.
 
 ## How it works
 
@@ -38,9 +38,26 @@ The module does not create a FHIR server, change existing FHIR endpoints, or ass
 
 ## Installation
 
+### IPM from the public registry
+
+In the target namespace, using an account with IRIS security administration and namespace code/data access, install the package from the configured public IPM registry:
+
+```objectscript
+zpm "install iris-fhir-openapi"
+```
+
+This command was verified with version 0.1.0 on a clean IRIS for Health Community 2026.2 container. If the default registry has not been configured in that namespace, initialize the default repository settings and retry:
+
+```objectscript
+zpm "repo -reset-defaults"
+zpm "install iris-fhir-openapi"
+```
+
+The default login URL is `/fhir-openapi-<lowercase-namespace>_login/index.html`, for example `/fhir-openapi-user_login/index.html`. After login, the management page is `/fhir-openapi-user/`. Installation checks ownership of the application paths and static files before copying.
+
 ### IPM from local source
 
-In the target namespace, using an account with IRIS security administration and namespace code/data access:
+Alternatively, load a local checkout in the target namespace:
 
 ```objectscript
 zpm "load /path/to/iris-fhir-openapi"
@@ -51,8 +68,6 @@ If you have a previously generated local offline archive, it predates the later 
 ```objectscript
 zpm "load /path/to/iris-fhir-openapi-0.1.0.tgz"
 ```
-
-The default login URL is `/fhir-openapi-<lowercase-namespace>_login/index.html`, for example `/fhir-openapi-user_login/index.html`. After login, the management page is `/fhir-openapi-user/`. Installation checks ownership of the application paths and static files before copying.
 
 ### Manual import
 

@@ -30,7 +30,20 @@
 
 ### IPM
 
-本项目还没有发布到公共 registry。推荐使用当前源码；本地曾生成的 `dist` 离线包不包含在仓库中，且为较早构建，未包含后续英文界面更改：
+在目标命名空间中，从已配置的公共 IPM 仓库安装：
+
+```objectscript
+zpm "install iris-fhir-openapi"
+```
+
+已在全新 IRIS for Health Community 2026.2 容器验证安装 `0.1.0`。如果该命名空间尚未配置默认仓库，可以先初始化默认仓库设置，再重新安装：
+
+```objectscript
+zpm "repo -reset-defaults"
+zpm "install iris-fhir-openapi"
+```
+
+也可以从本地源码加载；本地曾生成的 `dist` 离线包不包含在仓库中，且为较早构建，未包含后续英文界面更改：
 
 ```objectscript
 zpm "load /path/to/iris-fhir-openapi"
